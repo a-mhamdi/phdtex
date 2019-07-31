@@ -1,0 +1,108 @@
+\documentclass[a4paper, 11pt, twoside, openright]{book}
+
+\input{packs-file.tex}
+
+%%% Biblio Management
+\usepackage[hyperref=true,
+            url=false,
+            isbn=false,
+            backref=true,
+            style=alphabetic,
+            citereset=chapter,
+            maxbibnames=3,
+            defernumbers=true,
+            firstinits=true,
+            block=none,
+            sortcites,
+            backend=bibtex]{biblatex}
+
+\addbibresource{bib-file.bib}
+
+%%% PDF Properties
+\hypersetup{
+    pdftitle={Template Dissertation},
+    pdfauthor={A. Mhamdi},
+    pdfsubject={Template for \LaTeX\ users},
+    pdfkeywords={\LaTeX, PhD, Report.},
+    linkcolor=LinkCol,
+    citecolor=CiteCol,
+    urlcolor=LinkCol,
+    filecolor=blue,
+    pdfpagelayout=SinglePage,
+    pdffitwindow=true,
+    pdfnewwindow=true,
+    pdfstartview=XYZ,
+    pdftoolbar=true,
+    pdfmenubar=true,
+    plainpages=false
+}
+%%%
+
+\begin{document}
+% \selectlanguage{english}
+
+\input{cover-page.tex} % Cover Page
+
+\frontmatter
+
+\dominitoc
+\input{my-ack.tex} % Dedication + Acknowledgements
+
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+
+%=======================================
+\phantomsection
+\glsaddall
+\printglossaries
+\adjustmtc
+%=======================================
+
+\mainmatter
+
+%%%%% My chapters
+\input{chaps/GI}\adjustmtc 		 % Introduction
+\input{chaps/Ch1} 					   % Chapter 1
+\input{chaps/Ch2} 					   % Chapter 2
+\input{chaps/Ch3} 					   % Chapter 3
+\input{chaps/Ch4}				       % Chapter 4
+\input{chaps/GC}\adjustmtc     % Conclusion
+
+%%%%% My appendices
+\begin{appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\makeatletter
+\addtocontents{toc}{%
+  \begingroup
+  \let\protect\l@chapter\protect\l@section
+  \let\protect\l@section\protect\l@subsection
+}
+\makeatother
+
+\input{append/app-A} % Appendix A
+\input{append/app-B} % Appendix B
+\input{append/app-C} % Appendix C
+
+\addtocontents{toc}{\endgroup}
+\end{appendices}
+
+\backmatter
+%
+\phantomsection
+\addcontentsline{toc}{chapter}{\numberline{}Bibliography}
+\printbibliography
+
+\clearpage
+\pagestyle{empty}
+\null\newpage
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\phantomsection
+\pdfbookmark[0]{R\'esum\'e{\textendash}Abstract}{abstract}
+\input{abstract-file} % Résumé + Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
