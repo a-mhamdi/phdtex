@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rubber --clean Main-Doc
+rubber --clean main-doc
 
 rm *.ist* *.pdf* *.mtc* *.xml *.maf *.ist *.glg *.glo *.gls *.slg *.syg *.syi *-blx.bib*
 
@@ -13,5 +13,5 @@ pdflatex main-doc.tex
 pdflatex main-doc.tex
 pdflatex main-doc.tex
 
-# chmod 700 run_engines
-# ./run_engines
+# chmod 700 run-tex
+# ./run-tex

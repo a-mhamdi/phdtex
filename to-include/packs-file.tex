@@ -101,9 +101,9 @@
 \let\SV@mtc@verse\mtc@verse
 \let\SV@endmtc@verse\endmtc@verse
 \def\mtc@verse#1{\SV@mtc@verse#1\removelastskip%
-\begin{multicols}{\multicolumnmtc}\raggedcolumns\leavevmode\unskip
-\vskip -1.5ex \vskip -1\baselineskip}
-\def\endmtc@verse{\end{multicols}\SV@endmtc@verse}
+    \begin{multicols}{\multicolumnmtc}\raggedcolumns\leavevmode\unskip
+        \vskip -1.5ex \vskip -1\baselineskip}
+        \def\endmtc@verse{\end{multicols}\SV@endmtc@verse}
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -121,13 +121,13 @@
 \usepackage{pgfplots}
 \pgfplotsset{
     dirac/.style={
-        mark=triangle*,
-        mark options={scale=2},
-        ycomb,
-        scatter,
-        visualization depends on={y/abs(y)-1 \as \sign},
-        scatter/@pre marker code/.code={\scope[rotate=90*\sign,yshift=-2pt]}
-    }
+            mark=triangle*,
+            mark options={scale=2},
+            ycomb,
+            scatter,
+            visualization depends on={y/abs(y)-1 \as \sign},
+            scatter/@pre marker code/.code={\scope[rotate=90*\sign,yshift=-2pt]}
+        }
 }
 
 % --------------------- Thm, Rema, Exmp, Proof ---------------------
@@ -183,90 +183,90 @@
 \newcommand{\exrule}{\rule{\textwidth}{1pt}}
 
 \declaretheoremstyle[
-  spaceabove = 15pt, spacebelow=15pt,  % Space above and below the entire example
-  headfont   = \bfseries,  % Head font
-  headformat = $\blacktriangledown$ Example~\NUMBER\NOTE\vspace{-3mm},
-  headpunct  = \newline\exrule\newline,    % Punctuation after the head
-  notefont   = \itshape,           % Font of the note (example name in this case)
-  notebraces = {--- }{},           % Braces before and after note; again be careful with spaces.
-  bodyfont   = \leftskip=0em \rightskip=0em \itshape \rmfamily \linespread{1.05}, % Body font and formatting
-  preheadhook   = \Needspace*{4\baselineskip},  % Hook before the head; using needspace to ensure the head of the example is not on a separate page to its body.
-  postheadspace = 0pt,              % Space after the head; we want none as we have a new line already
-  prefoothook   = \ifhmode \hspace*{\fill}\newline \else \vspace{-5mm} \fi \exrule  % Hook for LaTeX code before the foot of the example (the space below it). If we are in horizontal mode, add a new line, otherwise just draw the ruled line. This makes 90% of the examples require no manual spacing.
-  ]{examplestyle}
+    spaceabove = 15pt, spacebelow=15pt,  % Space above and below the entire example
+    headfont   = \bfseries,  % Head font
+    headformat = $\blacktriangledown$ Example~\NUMBER\NOTE\vspace{-3mm},
+    headpunct  = \newline\exrule\newline,    % Punctuation after the head
+    notefont   = \itshape,           % Font of the note (example name in this case)
+    notebraces = {--- }{},           % Braces before and after note; again be careful with spaces.
+    bodyfont   = \leftskip=0em \rightskip=0em \itshape \rmfamily \linespread{1.05}, % Body font and formatting
+    preheadhook   = \Needspace*{4\baselineskip},  % Hook before the head; using needspace to ensure the head of the example is not on a separate page to its body.
+    postheadspace = 0pt,              % Space after the head; we want none as we have a new line already
+    prefoothook   = \ifhmode \hspace*{\fill}\newline \else \vspace{-5mm} \fi \exrule  % Hook for LaTeX code before the foot of the example (the space below it). If we are in horizontal mode, add a new line, otherwise just draw the ruled line. This makes 90% of the examples require no manual spacing.
+]{examplestyle}
 
 \declaretheorem[style=examplestyle, numberwithin=section]{Exmp}
 
 
 \tcbset{
     thmbox/.style={
-        enhanced,
-        breakable,
-        sharp corners=all,
-        fonttitle=\bfseries\normalsize,
-        fontupper=\normalsize\itshape,
-         top=0mm,
-         bottom=0mm,
-         right=0mm,
-        colback=white,
-        colframe=white,
-        colbacktitle=white,
-        coltitle=black,
-        attach boxed title to top left,
-        boxed title style={empty, size=minimal, bottom=1.5mm},
-        overlay unbroken ={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)|-%
-                  (frame.south east)--(frame.north east);},
-        overlay first={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);
-            \draw (frame.north east)--(frame.south east);},
-        overlay middle={
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);
-            \draw (frame.north east)--(frame.south east);},
-        overlay last={
-            \draw ([xshift=3.5mm]frame.north west)|-%
-                  (frame.south east)--(frame.north east);},
+            enhanced,
+            breakable,
+            sharp corners=all,
+            fonttitle=\bfseries\normalsize,
+            fontupper=\normalsize\itshape,
+            top=0mm,
+            bottom=0mm,
+            right=0mm,
+            colback=white,
+            colframe=white,
+            colbacktitle=white,
+            coltitle=black,
+            attach boxed title to top left,
+            boxed title style={empty, size=minimal, bottom=1.5mm},
+            overlay unbroken ={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)|-%
+                    (frame.south east)--(frame.north east);},
+            overlay first={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);
+                    \draw (frame.north east)--(frame.south east);},
+            overlay middle={
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);
+                    \draw (frame.north east)--(frame.south east);},
+            overlay last={
+                    \draw ([xshift=3.5mm]frame.north west)|-%
+                    (frame.south east)--(frame.north east);},
         },
     S/.style={thmbox,
-        overlay unbroken ={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay first={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay middle={
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay last={
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay unbroken ={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay first={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay middle={
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay last={
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
         },
     L/.style={thmbox,
-        overlay unbroken ={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)|-([xshift=15mm]frame.south west);},
-        overlay first={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay middle={
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay last={
-            \draw ([xshift=3.5mm]frame.north west)|-([xshift=15mm]frame.south west);},
+            overlay unbroken ={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)|-([xshift=15mm]frame.south west);},
+            overlay first={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay middle={
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay last={
+                    \draw ([xshift=3.5mm]frame.north west)|-([xshift=15mm]frame.south west);},
         },
     LQ/.style={thmbox,
-        overlay unbroken ={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)|-([xshift=10cm]frame.south west);
-            \node[anchor=east] at (frame.south east) {$\square$};},
-        overlay first={
-            \draw (title.south west)--(title.south east);
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay middle={
-            \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
-        overlay last={
-            \draw ([xshift=3.5mm]frame.north west)|-([xshift=10cm]frame.south west);
-            \node[anchor=east] at (frame.south east) {$\square$};},
-    },
+            overlay unbroken ={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)|-([xshift=10cm]frame.south west);
+                    \node[anchor=east] at (frame.south east) {$\square$};},
+            overlay first={
+                    \draw (title.south west)--(title.south east);
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay middle={
+                    \draw ([xshift=3.5mm]frame.north west)--([xshift=3.5mm]frame.south west);},
+            overlay last={
+                    \draw ([xshift=3.5mm]frame.north west)|-([xshift=10cm]frame.south west);
+                    \node[anchor=east] at (frame.south east) {$\square$};},
+        },
 }
 
 \newtcbtheorem[]{LEM}{Lemma}{thmbox,S}{theo}
@@ -305,10 +305,10 @@
 \usepackage{afterpage}
 
 \newcommand\blankpage{
-            \null
-            \thispagestyle{empty}
-            \addtocounter{page}{-1}
-            \clearpage}
+    \null
+    \thispagestyle{empty}
+    \addtocounter{page}{-1}
+    \clearpage}
 
 \usepackage[unicode=true, bookmarks=true, bookmarksnumbered=true, bookmarksopen=true, bookmarksopenlevel=1, breaklinks=true, pdfborder={0 0 0}, backref=true, colorlinks=true]{hyperref}
 
@@ -325,10 +325,10 @@
 \makeatletter
 
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else%
-  \hbox{}%
-  \thispagestyle{empty}%              % Empty header styles
-  \newpage%
-  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+            \hbox{}%
+            \thispagestyle{empty}%              % Empty header styles
+            \newpage%
+            \if@twocolumn\hbox{}\newpage\fi\fi\fi}
 
 \makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -347,13 +347,13 @@
 \usepackage{enumitem}
 
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
-            \node[shape=circle,fill=white,draw,inner sep=2pt] (char) {#1};}}
+        \node[shape=circle,fill=white,draw,inner sep=2pt] (char) {#1};}}
 
 \usepackage{microtype}
 
 \newenvironment{Abstract}%
 {\null\vfill\begin{center}%
-\bfseries\abstractname\end{center}}%
+        \bfseries\abstractname\end{center}}%
 {\vfill\null}
 
 \usepackage[savewrites,toc, style=long,nonumberlist]{glossaries}
@@ -365,7 +365,7 @@
 
 \setacronymstyle{long-sc-short}
 
-\input{gls-file.tex}
+\input{to-include/gls-file.tex}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{lipsum}

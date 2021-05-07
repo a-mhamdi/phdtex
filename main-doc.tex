@@ -1,6 +1,6 @@
 \documentclass[a4paper, 11pt, twoside, openright]{book}
 
-\input{packs-file.tex}
+\input{to-include/packs-file.tex}
 
 %%% Biblio Management
 \usepackage[hyperref=true,
@@ -16,11 +16,11 @@
             sortcites,
             backend=bibtex]{biblatex}
 
-\addbibresource{bib-file.bib}
+\addbibresource{biblio/bib-file.bib}
 
 %%% PDF Properties
 \hypersetup{
-    pdftitle={Template Dissertation},
+    pdftitle={Dissertation \LaTeX\ Template},
     pdfauthor={A. Mhamdi},
     pdfsubject={Template for \LaTeX\ users},
     pdfkeywords={\LaTeX, PhD, Report.},
@@ -41,12 +41,12 @@
 \begin{document}
 % \selectlanguage{english}
 
-\input{cover-page.tex} % Cover Page
+\input{to-include/cover-page.tex} % Cover Page
 
 \frontmatter
 
 \dominitoc
-\input{my-ack.tex} % Dedication + Acknowledgements
+\input{to-include/my-ack.tex} % Dedication + Acknowledgements
 
 \pagenumbering{roman}
 \tableofcontents
@@ -64,28 +64,28 @@
 
 %%%%% My chapters
 \input{chaps/g-intro}\adjustmtc 		 	% Introduction
-\input{chaps/ch1} 					   	% Chapter 1
-\input{chaps/ch2} 					   	% Chapter 2
-\input{chaps/ch3} 					   	% Chapter 3
-\input{chaps/ch4}				       		% Chapter 4
-\input{chaps/g-concl}\adjustmtc     		% Conclusion
+\input{chaps/chap-1} 					   	    % Chapter 1
+\input{chaps/chap-2} 					   	    % Chapter 2
+\input{chaps/chap-3} 					   	    % Chapter 3
+\input{chaps/chap-4}				       		% Chapter 4
+\input{chaps/g-concl}\adjustmtc     	% Conclusion
 
 %%%%% My appendices
 \begin{appendices}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
-\makeatletter
-\addtocontents{toc}{%
-  \begingroup
-  \let\protect\l@chapter\protect\l@section
-  \let\protect\l@section\protect\l@subsection
-}
-\makeatother
+  \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+  \makeatletter
+  \addtocontents{toc}{%
+    \begingroup
+    \let\protect\l@chapter\protect\l@section
+    \let\protect\l@section\protect\l@subsection
+  }
+  \makeatother
 
-\input{append/app-A} % Appendix A
-\input{append/app-B} % Appendix B
-\input{append/app-C} % Appendix C
+  \input{append/app-A} % Appendix A
+  \input{append/app-B} % Appendix B
+  \input{append/app-C} % Appendix C
 
-\addtocontents{toc}{\endgroup}
+  \addtocontents{toc}{\endgroup}
 \end{appendices}
 
 \backmatter
@@ -102,7 +102,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \phantomsection
 \pdfbookmark[0]{R\'esum\'e{\textendash}Abstract}{abstract}
-\input{abstract-file} % Résumé + Abstract
+\input{to-include/abstract-file} % Résumé + Abstract
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

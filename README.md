@@ -1,4 +1,4 @@
-# LaTeX Template for Thesis Dissertation
+## LaTeX Template for Thesis Dissertation
 
 * * *
 
@@ -8,13 +8,11 @@
 
 <center>
 
-[<img src = "imgs-ReadMe/Win.png" alt = "On how to install proTeXt" width="50" height="50">](https://www.tug.org/protext/)
-         [<img src = "imgs-ReadMe/Linux.jpeg" alt = "On how to install TeX Live" width="50" height="50">](https://www.tug.org/texlive/)
-          [<img src = "imgs-ReadMe/Mac.jpeg" alt = "On how to install Mac TeX" width="50" height="50">](https://www.tug.org/mactex/)
+[<img src = "imgs-ReadMe/Win.png" alt = "On how to install proTeXt" width="50" height="50">](https://www.tug.org/protext/)				[<img src = "imgs-ReadMe/Linux.jpeg" alt = "On how to install TeX Live" width="40" height="50">](https://www.tug.org/texlive/)				[<img src = "imgs-ReadMe/Mac.jpeg" alt = "On how to install Mac TeX" width="50" height="50">](https://www.tug.org/mactex/)
 
 </center>
 
-> _Below are the links to two apps useful to draw schemes in Tikz and to manage bibliography DB through semi wysiwyg editors._
+> _Below are the links to two useful apps in order to draw schemes in Tikz and to manage bibliography DB through semi wysiwyg editors._
 
 -   _Tikz Editor_ : [TikzEdt](http://www.tikzedt.org/ "Link to TikzEdt")
 
