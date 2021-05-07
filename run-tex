@@ -13,5 +13,5 @@ pdflatex main-doc.tex
 pdflatex main-doc.tex
 pdflatex main-doc.tex
 
-# chmod 700 run-tex
+# chmod +x run-tex
 # ./run-tex
