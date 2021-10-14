@@ -2,7 +2,7 @@
 
 rubber --clean main-doc
 
-rm *.ist* *.pdf* *.mtc* *.xml *.maf *.ist *.glg *.glo *.gls *.slg *.syg *.syi *-blx.bib*
+rm *.ist* *.fls* *.pdf* *.mtc* *.xml *.maf *.ist *.glg *.glo *.gls *.slg *.syg *.syi *-blx.bib*
 
 pdflatex --synctex=1 main-doc.tex
 pdflatex --synctex=1 main-doc.tex
