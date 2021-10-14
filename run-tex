@@ -4,14 +4,14 @@ rubber --clean main-doc
 
 rm *.ist* *.pdf* *.mtc* *.xml *.maf *.ist *.glg *.glo *.gls *.slg *.syg *.syi *-blx.bib*
 
-pdflatex main-doc.tex
-pdflatex main-doc.tex
-pdflatex main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
 bibtex main-doc
 makeglossaries main-doc
-pdflatex main-doc.tex
-pdflatex main-doc.tex
-pdflatex main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
 
 # chmod +x run-tex
 # ./run-tex
