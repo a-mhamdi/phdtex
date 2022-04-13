@@ -1,9 +1,6 @@
-run-tex
-
 *.aux
 *.log
 *.out
-
 *.toc
 *.mtc*
 *.lof

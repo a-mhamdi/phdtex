@@ -1,4 +1,4 @@
-FILENAME=main-doc
+FILENAME=PhD-Dissertation
 
 make:
 	make clean	
