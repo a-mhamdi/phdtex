@@ -24,3 +24,4 @@ run-tex
 *.syi
 
 *.fls
+*.fdb_latexmk
