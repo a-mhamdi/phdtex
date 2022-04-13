@@ -1,19 +1,17 @@
 #!/bin/bash
 
-rubber --clean PhD-Dissertation
+rubber --clean main-doc
 
-rm -f *.ist* *.fls* *.mtc* *.xml *.maf *.ist *.glg *.glo *.gls *.slg *.syg *.syi *-blx.bib*
+rm *.ist* *.fls* *.pdf* *.mtc* *.xml *.maf *.ist *.glg *.glo *.gls *.slg *.syg *.syi *-blx.bib*
 
-<<EXCLUDE
-pdflatex --synctex=1 PhD-Dissertation.tex
-pdflatex --synctex=1 PhD-Dissertation.tex
-pdflatex --synctex=1 PhD-Dissertation.tex
-bibtex PhD-Dissertation
-makeglossaries PhD-Dissertation
-pdflatex --synctex=1 PhD-Dissertation.tex
-pdflatex --synctex=1 PhD-Dissertation.tex
-pdflatex --synctex=1 PhD-Dissertation.tex
-EXCLUDE
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+bibtex main-doc
+makeglossaries main-doc
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
+pdflatex --synctex=1 main-doc.tex
 
 # chmod +x run-tex
 # ./run-tex
